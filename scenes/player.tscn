@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://vhy0ec8imys2"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_i60hp"]
+[ext_resource type="Texture2D" uid="uid://ov0ou6fw72w6" path="res://assets/textures/Rock Pile.png" id="2_d2xdp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v6vli"]
+radius = 8.99999
+height = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w55xy"]
+radius = 28.5394
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_i60hp")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_d2xdp")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_v6vli")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 10)
+rotation = -1.57079
+zoom = Vector2(2, 2)
+
+[node name="Visibility_Area" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visibility_Area"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("CircleShape2D_w55xy")
+
+[connection signal="area_entered" from="Visibility_Area" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Visibility_Area" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Visibility_Area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Visibility_Area" to="." method="_on_area_2d_body_exited"]
