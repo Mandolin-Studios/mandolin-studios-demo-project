@@ -1,39 +1,89 @@
-[gd_scene load_steps=5 format=3 uid="uid://d226k1snkhqlq"]
+[gd_scene load_steps=10 format=3 uid="uid://d226k1snkhqlq"]
 
+[ext_resource type="Shader" path="res://rescources/masked.gdshader" id="1_1ah1r"]
 [ext_resource type="Texture2D" uid="uid://bfkwxuvtct6y4" path="res://assets/textures/trees.png" id="1_27pnt"]
 [ext_resource type="Script" path="res://scenes/random_tree.gd" id="2_egce1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cdr6u"]
-radius = 6.0
-height = 18.4615
+radius = 9.95556
+height = 37.6889
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g3x7e"]
+shader = ExtResource("1_1ah1r")
+shader_parameter/mask_offset = Vector2(600, 400)
+shader_parameter/enabled = false
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ggf7"]
+radius = 23.6822
+height = 68.2774
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n0rdy"]
-radius = 61.0
-height = 176.0
+radius = 3.91111
+height = 50.1333
+
+[sub_resource type="Gradient" id="Gradient_ju8ru"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.0196078, 0.152941, 0.0196078, 0.8, 0.0982209, 0.22151, 0.0718147, 0.47451, 0.14902, 0.313726, 0.113725, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5tesi"]
+gradient = SubResource("Gradient_ju8ru")
+fill = 1
+fill_from = Vector2(0.5, 0.517094)
+fill_to = Vector2(0.534188, 0)
 
 [node name="RigidBody2D" type="StaticBody2D"]
+scale = Vector2(2.8125, 2.8125)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.24345e-14, 8.30768)
+position = Vector2(-4.57764e-05, 0.355545)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_cdr6u")
 
-[node name="VisibilityBlock" type="Area2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_g3x7e")
+position = Vector2(2.84441, -68.6222)
+scale = Vector2(2, 2)
+texture = ExtResource("1_27pnt")
+offset = Vector2(0, -40.53)
+region_enabled = true
+region_rect = Rect2(1, 1, 95, 62)
+script = ExtResource("2_egce1")
+
+[node name="VisibilityBlock" type="Area2D" parent="Sprite2D"]
+visible = false
 position = Vector2(1.24345e-14, 8.30768)
 rotation = -1.5708
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisibilityBlock"]
-position = Vector2(127.308, -2.99954)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/VisibilityBlock"]
+position = Vector2(43.6477, 0.172548)
+shape = SubResource("CapsuleShape2D_0ggf7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.84441, -34.8444)
+scale = Vector2(2, 2)
+texture = ExtResource("1_27pnt")
+region_enabled = true
+region_rect = Rect2(14, 62, 69, 53)
+
+[node name="VisibilityBlock" type="Area2D" parent="Sprite2D2"]
+visible = false
+position = Vector2(1.24345e-14, 8.30768)
+rotation = -1.5708
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/VisibilityBlock"]
+position = Vector2(14.8855, -1.59995)
+rotation = -1.57079
 shape = SubResource("CapsuleShape2D_n0rdy")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-y_sort_enabled = true
-texture_filter = 1
-scale = Vector2(2.0625, 2.0625)
-texture = ExtResource("1_27pnt")
-offset = Vector2(0, -40.53)
-hframes = 2
-vframes = 3
-frame = 1
-script = ExtResource("2_egce1")
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(3.5555, -3.55556)
+scale = Vector2(4.625, 1.90833)
+texture = SubResource("GradientTexture2D_5tesi")

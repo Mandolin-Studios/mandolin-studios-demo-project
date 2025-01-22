@@ -69,19 +69,17 @@ position = Vector2(-819, -126)
 
 [node name="Sprite2D" parent="." instance=ExtResource("4_g8m13")]
 position = Vector2(-170, 61)
-scale = Vector2(2.0625, 2.0625)
 
 [node name="Sprite2D2" parent="." instance=ExtResource("4_g8m13")]
 position = Vector2(68, -91)
-scale = Vector2(3.75, 3.75)
 
 [node name="Sprite2D3" parent="." instance=ExtResource("4_g8m13")]
 position = Vector2(-57, -75)
-scale = Vector2(2.8125, 2.8125)
+scale = Vector2(2.34375, 2.34375)
 
 [node name="Sprite2D4" parent="." instance=ExtResource("4_g8m13")]
 position = Vector2(-288, 159)
-scale = Vector2(3.75, 3.75)
+scale = Vector2(2.34375, 2.34375)
 
 [node name="Sprite2D5" parent="." instance=ExtResource("4_g8m13")]
 position = Vector2(-39, 148)
@@ -89,52 +87,50 @@ scale = Vector2(2.34375, 2.34375)
 
 [node name="Sprite2D6" parent="." instance=ExtResource("4_g8m13")]
 position = Vector2(108, 193)
-scale = Vector2(2.0625, 2.0625)
+scale = Vector2(2.34375, 2.34375)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("4_g8m13")]
 position = Vector2(-479, 168)
-scale = Vector2(2.34375, 2.34375)
+scale = Vector2(2.0625, 2.0625)
 
 [node name="RigidBody2D2" parent="." instance=ExtResource("4_g8m13")]
 position = Vector2(-359, 326)
-scale = Vector2(2.0625, 2.0625)
+scale = Vector2(3.75, 3.75)
 
 [node name="RigidBody2D3" parent="." instance=ExtResource("4_g8m13")]
 position = Vector2(-560, 5)
 scale = Vector2(2.34375, 2.34375)
 
 [node name="RigidBody2D4" parent="." instance=ExtResource("4_g8m13")]
-position = Vector2(-230, -97)
+position = Vector2(-124, -160)
 scale = Vector2(3.75, 3.75)
 
 [node name="RigidBody2D5" parent="." instance=ExtResource("4_g8m13")]
-position = Vector2(300, 150)
-scale = Vector2(3.75, 3.75)
+position = Vector2(338, 163)
+scale = Vector2(2.34375, 2.34375)
 
 [node name="RigidBody2D6" parent="." instance=ExtResource("4_g8m13")]
 position = Vector2(186, -91)
-scale = Vector2(3.75, 3.75)
 
 [node name="RigidBody2D7" parent="." instance=ExtResource("4_g8m13")]
-position = Vector2(404, -155)
-scale = Vector2(2.8125, 2.8125)
+position = Vector2(433, -175)
+scale = Vector2(3.75, 3.75)
 
 [node name="RigidBody2D8" parent="." instance=ExtResource("4_g8m13")]
-position = Vector2(-242, -203)
+position = Vector2(-428, -250)
 scale = Vector2(2.34375, 2.34375)
 
 [node name="RigidBody2D9" parent="." instance=ExtResource("4_g8m13")]
-position = Vector2(-151, 276)
+position = Vector2(-111, 321)
 scale = Vector2(2.34375, 2.34375)
 
 [node name="RigidBody2D10" parent="." instance=ExtResource("4_g8m13")]
-position = Vector2(95, 305)
+position = Vector2(209, 384)
 scale = Vector2(2.34375, 2.34375)
 
 [node name="RigidBody2D11" parent="." instance=ExtResource("4_g8m13")]
-position = Vector2(-412, 76)
-scale = Vector2(3.75, 3.75)
+position = Vector2(-697, -160)
+scale = Vector2(2.34375, 2.34375)
 
 [node name="RigidBody2D12" parent="." instance=ExtResource("4_g8m13")]
-position = Vector2(-555, 240)
-scale = Vector2(3.75, 3.75)
+position = Vector2(-640, 346)
